@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { TextField } from "@mui/material";
+// import { TextField } from "@mui/material";
 
 const SearchInput = ({ onSearch }) => {
   const [input, setInput] = useState("");
@@ -12,18 +12,44 @@ const SearchInput = ({ onSearch }) => {
   return (
     <div>
       <form onSubmit={submitHandler}>
-        <TextField
-          id="outlined-basic"
+        {/* <TextField
           label="Enter a country Name"
-          variant="outlined"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           style={{
-            textTransform: "none",
-            marginLeft: "65px ",
-            marginTop: "20px",
+            display: "flex",
+            flexWrap: "wrap",
+
+            marginLeft: "150px",
+            marginTop: "100px",
+            width: "250px",
+            height: "50px",
+            borderRadius: "20",
+
+            backgroundColor: "red",
           }}
-        ></TextField>
+        ></TextField> */}
+
+        <input
+          type="text"
+          value={input}
+          placeholder=" &nbsp;  Enter a country Name"
+          onChange={(e) => setInput(e.target.value)}
+          style={{
+            width: "280px",
+            height: "50px",
+            display: "flex",
+            flexWrap: "wrap",
+            margin: "auto",
+            borderRadius: "20px",
+            fontSize: "22px",
+            border: "none",
+            outline: "none",
+            marginTop: "30px",
+            backgroundColor: "#a5887a",
+            color: "black",
+          }}
+        />
       </form>
     </div>
   );
