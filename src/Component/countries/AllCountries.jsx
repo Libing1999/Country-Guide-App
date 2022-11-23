@@ -1,6 +1,5 @@
 import { Container } from "@mui/system";
 import React, { useEffect, useState } from "react";
-// import DenseAppBar from "../headsection/DenseAppBar";
 import SearchInput from "../Search/SearchInput";
 import { apiURL } from "../utility/Api";
 
@@ -9,27 +8,11 @@ const AllCountries = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState();
 
-  const getAllCountries = async () => {
-    try {
-      const res = await fetch(`${apiURL}/all`);
-      if (!res.ok) throw new Error("Something went wrong");
-      const data = await res.json();
-
-      setCountries(data);
-      setIsLoading(false);
-    } catch (error) {
-      setIsLoading(false);
-      setError(error.message);
-    }
-  };
-
   const getCountryByName = async (countryName) => {
     try {
       const res = await fetch(`${apiURL}/name/${countryName}?fullText=true`);
-
       if (!res.ok) throw new Error("Not found any country");
       const data = await res.json();
-
       setCountries(data);
       setIsLoading(false);
     } catch (error) {
@@ -39,14 +22,14 @@ const AllCountries = () => {
   };
 
   useEffect(() => {
-    // getCountryByName();
-    getAllCountries();
+    getCountryByName();
   }, []);
 
   return (
     <div>
       <Container
         sx={{
+          marginTop: "1em",
           height: "700px",
           width: "600px",
           backgroundColor: "gray",
@@ -55,8 +38,6 @@ const AllCountries = () => {
           boxShadow: "5px 18px 32px 10px rgba(255,255,255, 0.5)",
         }}
       >
-        {/* <DenseAppBar /> */}
-
         <SearchInput onSearch={getCountryByName} />
 
         {isLoading && !error && (
@@ -98,7 +79,6 @@ const AllCountries = () => {
                 style={{
                   textAlign: "center",
                   fontSize: "35px",
-                  // letterSpacing: "2px",
                   marginLeft: "3em",
                   textDecoration: "underline",
                 }}
@@ -170,5 +150,4 @@ const AllCountries = () => {
     </div>
   );
 };
-
 export default AllCountries;

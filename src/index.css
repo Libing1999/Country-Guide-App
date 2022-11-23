@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  background-image: url(https://media.istockphoto.com/id/1404349453/photo/world-map-topographic-map-dark-ocean-neutral.jpg?b=1&s=170667a&w=0&k=20&c=Rml-4nbch1vHMWxUnMj-Wquy5YYNIHMglkTJmdGmmq4=);
+  background-image: url(/public/util/worldmap.jpg);
   background-size: cover;
   opacity: 0.9;
 
