@@ -20,10 +20,9 @@ const AllCountries = () => {
       setError(error.message);
     }
   };
-
   useEffect(() => {
-    getCountryByName();
-  }, []);
+    console.log(error);
+  }, [error]);
 
   return (
     <div>
@@ -40,19 +39,7 @@ const AllCountries = () => {
       >
         <SearchInput onSearch={getCountryByName} />
 
-        {isLoading && !error && (
-          <h2
-            style={{
-              color: "black",
-              fontSize: "20px",
-              marginLeft: "10em",
-              marginTop: "-.235em",
-            }}
-          >
-            Loading...
-          </h2>
-        )}
-        {/* {error && !isLoading && (
+        {error && !isLoading && (
           <h4
             style={{
               color: "red",
@@ -63,7 +50,7 @@ const AllCountries = () => {
           >
             {error}
           </h4>
-        )} */}
+        )}
 
         {countries.map((country) => (
           <div
