@@ -11,7 +11,7 @@ const SearchInput = ({ onSearch }) => {
         <input
           type="text"
           value={input}
-          placeholder=" &nbsp;  Enter a country Name"
+          placeholder=" &nbsp;  Enter a country Name..."
           onChange={(e) => setInput(e.target.value)}
           style={{
             width: "280px",
@@ -21,11 +21,12 @@ const SearchInput = ({ onSearch }) => {
             margin: "auto",
             borderRadius: "20px",
             fontSize: "22px",
+
             border: "none",
             outline: "none",
             marginTop: "30px",
-            backgroundColor: "#a5887a",
-            color: "black",
+            backgroundColor: "gray",
+            color: "white",
           }}
         />
       </form>

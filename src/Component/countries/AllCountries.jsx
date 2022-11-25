@@ -29,8 +29,8 @@ const AllCountries = () => {
     <div>
       <Container
         sx={{
-          marginTop: "1em",
-          height: "700px",
+          marginTop: ".5em",
+          height: "715px",
           width: "600px",
           backgroundColor: "gray",
           borderRadius: "50px",
@@ -52,7 +52,7 @@ const AllCountries = () => {
             Loading...
           </h2>
         )}
-        {error && !isLoading && (
+        {/* {error && !isLoading && (
           <h4
             style={{
               color: "red",
@@ -63,7 +63,7 @@ const AllCountries = () => {
           >
             {error}
           </h4>
-        )}
+        )} */}
 
         {countries.map((country) => (
           <div
@@ -140,9 +140,38 @@ const AllCountries = () => {
                   Subregion&nbsp; &nbsp;:
                   <span style={{ color: "white" }}> {country.subregion}</span>
                 </h4>
+
+                <h4
+                  style={{
+                    fontSize: "25px",
+                    color: "black",
+                  }}
+                >
+                  Currency&nbsp; &nbsp; &nbsp;:{" "}
+                  <span style={{ color: "white" }}>
+                    {Object.keys(country.currencies)}
+                  </span>
+                </h4>
+                <a href={country.maps.googleMaps} target="_blank">
+                  {/* View {country.name.common} map */}
+                  <button
+                    style={{
+                      width: "140px",
+                      height: "40px",
+                      marginLeft: "100px",
+                      marginTop: "-20px",
+                      backgroundColor: "#0e55b1",
+                      border: "none",
+                      color: "white",
+                      borderRadius: "10px ",
+                      marginBottom: "50px",
+                      fontSize: "17px",
+                    }}
+                  >
+                    View Location
+                  </button>
+                </a>
               </div>
-              {/* <h4>currency:{country.currencies.name}</h4> */}
-              {/* <h4>languages:{country.languages}</h4> */}
             </div>
           </div>
         ))}
