@@ -139,7 +139,7 @@ const AllCountries = () => {
                     {Object.keys(country.currencies)}
                   </span>
                 </h4>
-                <a href={country.maps.googleMaps} target="_blank">
+                <a href={country.maps.googleMaps} target="_blank" rel="noreferrer">
                   {/* View {country.name.common} map */}
                   <button
                     style={{
