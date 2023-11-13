@@ -1,2 +1,2 @@
 # Country-Guide-App
-stack: Javascript, Html, Css
+stack : Javascript, Html, Css
